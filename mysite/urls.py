@@ -22,5 +22,6 @@ from mysite.views import home
 urlpatterns = [
     path("", view=home, name="home"),
     path('admin/', admin.site.urls),
-    path('music/', include("music.urls"))
+    path('music/', include("music.urls")),
+    path("heroapi/", include("myapi.urls"))
 ]
