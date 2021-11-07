@@ -17,19 +17,6 @@ class AlbumList(viewsets.ModelViewSet):
     #     pass
 
 
-class SongList(APIView):
-    def get(self, request):
-        songs = Song.objects.all()
-        serializer = SongSerializers(songs, many=True)
-        return Response(serializer.data)
-    
-    def post(self):
-        pass
-    
-
-#     elif request.method == 'POST': # user posting data
-#         serializer = CountrySerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save() # save to db
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+class SongList(viewsets.ModelViewSet):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializers

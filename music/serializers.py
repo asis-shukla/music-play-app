@@ -7,7 +7,7 @@ class AlbumSerializers(serializers.HyperlinkedModelSerializer):
         model = Album
         fields = "__all__"
 
-class SongSerializers(serializers.ModelSerializer):
+class SongSerializers(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Song
         fields = "__all__"
