@@ -23,6 +23,5 @@ urlpatterns = [
     path("", view=home, name="home"),
     path('admin/', admin.site.urls),
     path('music/', include("music.urls")),
-    path("hero/", include("myapi.urls")),
     path("user/", include("users.urls"))
 ]
